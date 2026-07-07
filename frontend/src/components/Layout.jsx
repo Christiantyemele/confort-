@@ -1,20 +1,13 @@
 import { motion } from 'framer-motion'
 import PropTypes from 'prop-types'
 import { ParticleBackground } from './ParticleBackground'
+import { GamingBackground } from './GamingBackground'
 
 export function Layout({ children }) {
   return (
     <div className="relative min-h-screen w-full overflow-hidden bg-arcade-black font-space">
-      {/* Animated grid background */}
-      <div
-        className="pointer-events-none fixed inset-0 z-0"
-        style={{
-          backgroundImage:
-            'linear-gradient(rgba(0, 255, 204, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 255, 204, 0.03) 1px, transparent 1px)',
-          backgroundSize: '40px 40px',
-          animation: 'gridScroll 20s linear infinite',
-        }}
-      />
+      {/* Gaming background image with dark overlay */}
+      <GamingBackground opacity={0.5} />
 
       {/* Particle background - reduced on mobile */}
       <ParticleBackground count={15} intensity={0.6} />
