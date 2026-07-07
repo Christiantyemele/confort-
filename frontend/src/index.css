@@ -13,7 +13,8 @@
 
 @layer base {
   body {
-    @apply bg-arcade-black text-white font-space min-h-screen antialiased;
+    @apply text-white font-space min-h-screen antialiased;
+    background-color: #0a0a0a;
   }
 
   /* Mobile-first responsive typography */
@@ -65,6 +66,20 @@
 }
 
 @layer components {
+  .gaming-bg {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  .gaming-bg-image {
+    z-index: 0;
+  }
+
+  .gaming-bg-overlay {
+    z-index: 1;
+  }
+
   .glass-card {
     @apply bg-white/5 backdrop-blur-md border border-neon-cyan/30 rounded-xl;
   }
