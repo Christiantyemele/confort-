@@ -130,7 +130,7 @@ Confort+ is designed for production deployment with:
 - **Frontend**: Vercel hosting (PWA with automatic builds)
 - **Backend**: Compiled Rust binary (AWS, Railway, Render, DigitalOcean, or similar)
 - **Database**: Supabase PostgreSQL
-- **Payment Processing**: CinetPay and Binance Pay webhooks
+- **Payment Processing**: Fapshi and Binance Pay webhooks
 
 ### Quick Start Deployment
 
@@ -144,7 +144,7 @@ Confort+ is designed for production deployment with:
    - Build release binary: `cargo build --release`
    - Deploy `target/release/confort` binary to your hosting platform
    - Set production environment variables (SUPABASE_URL, SUPABASE_SERVICE_KEY, API keys, etc.)
-   - Configure webhooks with CinetPay and Binance Pay
+   - Configure webhooks with Fapshi and Binance Pay
    - Run binary: `./confort` (listens on 0.0.0.0:8000)
 
 3. **Complete Setup**:
@@ -158,12 +158,13 @@ Confort+ is designed for production deployment with:
 
 **Backend** (set on server):
 - `SUPABASE_URL`: Supabase project URL
-- `SUPABASE_KEY`: Service Role Key
-- `CINETPAY_API_KEY`: CinetPay API key
-- `CINETPAY_SECRET_KEY`: CinetPay secret key
+- `SUPABASE_SERVICE_KEY`: Service Role Key
+- `FAPSHI_API_USER`: Fapshi API user
+- `FAPSHI_API_KEY`: Fapshi API key
+- `FAPSHI_WEBHOOK_SECRET`: Fapshi webhook secret
 - `BINANCE_API_KEY`: Binance API key
-- `BINANCE_SECRET_KEY`: Binance secret key
 - `CORS_ORIGIN`: Production frontend URL
+- `SERVER_PORT`: Server listening port (default: 8000)
 
 ## 🔒 Security Features
 
@@ -180,7 +181,7 @@ Confort+ is designed for production deployment with:
 ### Customer App
 - `POST /api/initiate` — Initiate payment, create transaction
 - `GET /api/transaction/{id}` — Get transaction details and generated code
-- `POST /api/webhook/cinetpay` — CinetPay payment confirmation webhook
+- `POST /api/webhook/fapshi` — Fapshi payment confirmation webhook
 - `POST /api/webhook/crypto` — Binance Pay payment confirmation webhook
 
 ### Manager Portal
