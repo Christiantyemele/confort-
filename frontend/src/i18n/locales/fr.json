@@ -33,5 +33,11 @@
   "networkError": "Erreur réseau",
   "codeVerified": "Code vérifié!",
   "verifyNext": "Vérifier le suivant",
-  "verify": "Vérifier"
+  "verify": "Vérifier",
+  "settings": "Paramètres",
+  "soundEffects": "Effets sonores",
+  "soundEffectsHint": "Activer ou désactiver l'audio du jeu",
+  "volume": "Volume",
+  "volumeDisabled": "Activez les effets sonores pour régler le volume",
+  "close": "Fermer"
 }
