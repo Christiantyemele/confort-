@@ -7,10 +7,25 @@ export function GamingBackground({ opacity = 0.5 }) {
   const [imageError, setImageError] = useState(false)
 
   useEffect(() => {
+    let cancelled = false
     const img = new Image()
     img.src = GAMING_IMAGES.primary
-    img.onload = () => setImageLoaded(true)
-    img.onerror = () => setImageError(true)
+    img.onload = () => {
+      if (!cancelled) setImageLoaded(true)
+    }
+    img.onerror = () => {
+      if (!cancelled) setImageError(true)
+    }
+
+    return () => {
+      // Detach event handlers and abort the in-flight request so the
+      // Image object (and its listeners) can be garbage collected when
+      // the scene switches / component unmounts. Prevents a memory leak.
+      cancelled = true
+      img.onload = null
+      img.onerror = null
+      img.src = ''
+    }
   }, [])
 
   const backgroundStyle = imageLoaded && !imageError
