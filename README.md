@@ -1,6 +1,8 @@
 # Confort+ — Anti-Fraud Payment & Session Management System
 
-Confort+ is a modern, production-grade payment and session management system designed for secure, fraud-resistant customer interactions. Built with React (frontend) and Rust/Actix-web (backend), it integrates with Fapshi and Binance Pay for flexible payment options.
+Confort+ is a modern, production-grade payment and session management system designed for secure, fraud-resistant customer interactions. Built with React (frontend) and Rust/Actix-web (backend), it integrates with CinetPay (mobile money) and Binance Pay (cryptocurrency) for flexible payment options.
+
+> **Note:** Earlier documentation referenced "Fapshi" as the mobile-money provider. CinetPay is the current production provider; see [DEPLOYMENT.md](./DEPLOYMENT.md) for details.
 
 ## 🎯 Key Features
 
